@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Produtos - PetNex</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGreen: '#1A4331',
+                        bgLight: '#F5EFEB',
+                        peach: '#DEB08B',
+                        gold: '#EAD09E',
+                        darkGreenHover: '#143527',
+                        medGreen: '#2B5E45'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { scroll-behavior: smooth; }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-bgLight text-gray-800 font-poppins">
+
+    <!-- 1. Navbar -->
+    <header class="bg-darkGreen text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="petnex_landing_page.html" class="flex items-center shrink-0">
+                <img src="img/logo3.png" alt="PetNex Logo" class="h-14 w-auto object-cover rounded-xl">
+            </a>
+            
+            <!-- Navegação Desktop -->
+            <nav class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="petnex_landing_page.html" class="hover:text-gold transition-colors">Início</a>
+                <a href="#" class="hover:text-gold transition-colors">Sobre</a>
+                <a href="#" class="text-gold border-b-2 border-gold pb-1 transition-colors">Produtos</a>
+                <a href="#" class="hover:text-gold transition-colors">Contato</a>
+            </nav>
+            
+            <!-- Ícones de Ação -->
+            <div class="flex items-center gap-5 text-lg">
+                <button class="hover:text-gold transition-colors" aria-label="Pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="hover:text-gold transition-colors" aria-label="Carrinho"><i class="fa-solid fa-cart-shopping"></i></button>
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-btn-prod" class="md:hidden hover:text-gold transition-colors focus:outline-none" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu-prod" class="hidden md:hidden absolute top-full left-0 w-full bg-darkGreen border-t border-medGreen shadow-2xl py-6 px-8 flex flex-col gap-4 text-base font-medium transition-all">
+            <a href="petnex_landing_page.html" class="hover:text-gold transition-colors py-2 border-b border-medGreen/40">Início</a>
+            <a href="#" class="hover:text-gold transition-colors py-2 border-b border-medGreen/40">Sobre</a>
+            <a href="#" class="text-gold py-2 border-b border-medGreen/40">Produtos</a>
+            <a href="#" class="hover:text-gold transition-colors py-2">Contato</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section Reformulada -->
+    <section class="bg-peach py-16 px-6 relative overflow-hidden">
+        <!-- Ícones decorativos sutis no fundo -->
+        <i class="fa-solid fa-paw absolute top-8 left-10 text-white/20 text-6xl -rotate-12"></i>
+        <i class="fa-solid fa-bone absolute bottom-4 right-1/2 text-white/20 text-5xl rotate-45"></i>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Lado Esquerdo: Texto e Preço -->
+            <div class="text-center md:text-left space-y-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-darkGreen leading-tight">
+                    Produtos Inaliv
+                </h1>
+                <p class="text-darkGreen text-lg md:text-xl font-medium max-w-lg mx-auto md:mx-0 opacity-90">
+                    Inovação, qualidade e sustentabilidade para o bem-estar de quem você mais ama.
+                </p>
+                
+                <!-- Bloco de Preço e Botão de Compra -->
+                <div class="pt-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <!-- Preço -->
+                    <div class="bg-white/50 backdrop-blur-sm px-6 py-3 rounded-2xl border border-white/60 shadow-sm text-center md:text-left">
+                        <span class="block text-sm text-darkGreen/70 font-semibold mb-1 uppercase tracking-wider">Valor</span>
+                        <span class="text-3xl font-bold text-darkGreen">R$ 250,00</span>
+                    </div>
+                    
+                    <!-- Botão -->
+                    <button class="bg-darkGreen text-white font-bold py-4 px-8 rounded-2xl hover:bg-medGreen transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto h-[76px]">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i> Comprar Agora
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Lado Direito: Imagem de Destaque com Selo de Promoção -->
+            <div class="flex justify-center md:justify-end mt-8 md:mt-0">
+                <div class="relative">
+                    <!-- Efeito de brilho/sombra atrás da imagem -->
+                    <div class="absolute inset-0 bg-gold blur-xl opacity-50 rounded-[2rem]"></div>
+                    
+                    <!-- Imagem Principal -->
+                    <img src="img/gatoComCone.jpeg" alt="Gato com Cone PetNex" class="relative z-10 w-full max-w-md h-auto object-cover rounded-[2rem] shadow-2xl border-4 border-white/50 transform hover:scale-105 transition-transform duration-500">
+                    
+                    <!-- Selo de Promoção (Sale Stamp) -->
+                    <img src="img/sale-stamp-2.png" alt="Selo de Promoção" class="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-28 md:w-36 z-20 transform rotate-12 drop-shadow-xl hover:scale-110 hover:rotate-6 transition-all duration-300 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Grid de Produtos (5 Cards) -->
+    <main class="flex-grow py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- 
+                Grid Tricks: lg:grid-cols-6. 
+                Cada item ocupa 2 colunas. 
+                Os 3 primeiros preenchem a primeira linha.
+                O 4º item começa na coluna 2 (lg:col-start-2), empurrando-o para o centro.
+                O 5º item se posiciona naturalmente logo depois, fechando a simetria.
+            -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+                
+                <!-- Card 1: Cone Inalador PetNex -->
+                <div class="sm:col-span-1 lg:col-span-2 bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden bg-bgLight">
+                        <img src="img/Inalador.jpeg" alt="Cone Inalador" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-gold text-darkGreen text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Destaque</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-darkGreen mb-2">Inalador PetNex</h2>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">O nosso carro-chefe. Combina cone de proteção e inalador para oferecer alívio respiratório sem estresse para o seu pet.</p>
+                        <span class="text-sm text-gray-400 line-through mb-1">R$ 179,80</span>
+                        <div class="text-2xl font-bold text-darkText mb-5">R$ 149,90</div>
+                        <button class="mt-auto w-full bg-darkGreen text-white font-medium py-3 px-4 rounded-xl hover:bg-darkGreenHover transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Coleira Sustentável -->
+                <div class="sm:col-span-1 lg:col-span-2 bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden bg-bgLight">
+                        <img src="img/ConeSemInalador.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-vibrantGreen text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Eco</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-darkGreen mb-2">Cone Sustentável GG</h2>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">Estilo e responsabilidade. Produzida a partir de roupas recicladas, resistente, ajustável e gentil com o meio ambiente.</p>
+                        <div class="text-2xl font-bold text-darkText mb-5">R$ 119,90</div>
+                        <button class="mt-auto w-full bg-darkGreen text-white font-medium py-3 px-4 rounded-xl hover:bg-darkGreenHover transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Refil Inalador -->
+                <div class="sm:col-span-1 sm:col-start-1 lg:col-span-2 lg:col-start-auto bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden bg-bgLight">
+                        <img src="img/ConeSemInalador.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-darkGreen mb-2">Cone Sustentável G</h2>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">Peça de reposição oficial para o mecanismo do seu Cone PetNex, garantindo higiene e máxima eficiência na nebulização.</p>
+                        <div class="text-2xl font-bold text-darkText mb-5">R$ 109,90</div>
+                        <button class="mt-auto w-full bg-darkGreen text-white font-medium py-3 px-4 rounded-xl hover:bg-darkGreenHover transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Kit Conforto (Cone + Coleira) -->
+                <div class="sm:col-span-1 lg:col-span-2 lg:col-start-2 bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group border-2 border-gold/40">
+                    <div class="relative h-64 overflow-hidden bg-bgLight">
+                        <img src="img/ConeSemInalador.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-darkGreen mb-2">Cone Sustentável M</h2>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">Leve o Cone Inalador PetNex junto com a nossa Coleira Sustentável com um desconto especial para cuidar do seu pet por inteiro.</p>
+                        <div class="flex items-end gap-3 mb-5">
+                            <span class="text-2xl font-bold text-darkText">R$ 99,90</span>
+                        </div>
+                        <button class="mt-auto w-full bg-darkGreen text-white font-medium py-3 px-4 rounded-xl hover:bg-darkGreenHover transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 5: Bolsa de Transporte PetNex -->
+                <div class="sm:col-span-1 sm:col-start-1 lg:col-span-2 lg:col-start-4 bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-64 overflow-hidden bg-bgLight">
+                        <img src="img/ConeSemInalador.jpeg" alt="Bolsa de Transporte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-darkGreen mb-2">Cone Sustentável P</h2>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow line-clamp-3">Design respirável e acolchoado. Ideal para viagens seguras e passeios tranquilos, mantendo seu pet confortável.</p>
+                        <div class="text-2xl font-bold text-darkText mb-5">R$ 89,90</div>
+                        <button class="mt-auto w-full bg-darkGreen text-white font-medium py-3 px-4 rounded-xl hover:bg-darkGreenHover transition-colors flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. Footer -->
+    <footer class="bg-darkGreen text-white py-10 mt-auto border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
+            <img src="img/logo3.png" alt="PetNex Logo" class="h-16 w-auto object-cover rounded-xl">
+            <p class="text-sm text-gray-300 mb-2">Conexão entre Pets e Tecnologia.</p>
+            <p class="text-xs text-white/50">&copy; 2026 PetNex. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtnProd = document.getElementById('menu-btn-prod');
+        const mobileMenuProd = document.getElementById('mobile-menu-prod');
+
+        menuBtnProd.addEventListener('click', () => {
+            mobileMenuProd.classList.toggle('hidden');
+            const icon = menuBtnProd.querySelector('i');
+            if (mobileMenuProd.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileMenuProd.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuProd.classList.add('hidden');
+                const icon = menuBtnProd.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+
+</body>
+</html>

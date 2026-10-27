@@ -1,0 +1,22 @@
+/* Styles from petnex_produtos.html */
+body { scroll-behavior: smooth; }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+
+/* Styles from petnex_landing_page.html */
+/* Custom styles for smooth scrolling and minor tweaks not covered by Tailwind */
+        html { scroll-behavior: smooth; }
+        .text-balance { text-wrap: balance; }
+        
+        /* Subtle floating animation for hero decorative elements */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+
