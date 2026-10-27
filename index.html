@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetNex - Conexão entre Pets e Tecnologia</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGreen: '#1A4331',
+                        cream: '#F5EFEB',
+                        gold: '#EAD09E',
+                        lightText: '#FAFAFA',
+                        medGreen: '#2B5E45',
+                        darkText: '#121212',
+                        peach: '#DEB08B',
+                        softGray: '#F9F8F6'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .text-balance { text-wrap: balance; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-cream text-darkText font-poppins antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-darkGreen text-lightText fixed w-full top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center shrink-0">
+                <img src="img/logo3.png" alt="PetNex" class="h-16 md:h-20 w-auto object-cover rounded-xl">
+            </a>
+            
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#" class="hover:text-gold transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-gold transition-colors">Sobre nós</a>
+                <a href="petnex_produtos.html" class="hover:text-gold transition-colors">Produtos</a>
+                <a href="#blog" class="hover:text-gold transition-colors">Blog</a>
+                <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
+            </nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center gap-6 text-lg">
+                <button class="hover:text-gold transition-colors" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="hover:text-gold transition-colors" aria-label="User Profile"><i class="fa-regular fa-user"></i></button>
+                <button class="hover:text-gold transition-colors" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-btn" class="md:hidden hover:text-gold transition-colors focus:outline-none" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-darkGreen border-t border-medGreen shadow-2xl py-6 px-8 flex flex-col gap-4 text-base font-medium transition-all">
+            <a href="#" class="hover:text-gold transition-colors py-2 border-b border-medGreen/40">Início</a>
+            <a href="#sobre" class="hover:text-gold transition-colors py-2 border-b border-medGreen/40">Sobre nós</a>
+            <a href="petnex_produtos.html" class="hover:text-gold transition-colors py-2 border-b border-medGreen/40">Produtos</a>
+            <a href="#blog" class="hover:text-gold transition-colors py-2 border-b border-medGreen/40">Blog</a>
+            <a href="#contato" class="hover:text-gold transition-colors py-2">Contato</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="bg-darkGreen text-lightText pt-32 pb-20 px-6 relative overflow-hidden">
+        <!-- Decorative abstract lines (simulated with icons) -->
+        <i class="fa-solid fa-leaf absolute top-40 left-10 text-medGreen text-4xl opacity-50 animate-float" style="transform: rotate(-45deg);"></i>
+        <i class="fa-regular fa-paper-plane absolute bottom-20 right-10 text-gold text-3xl opacity-30 animate-float" style="animation-delay: 1s;"></i>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="space-y-6 z-10">
+                <p class="text-gold font-medium uppercase tracking-widest text-sm">Tecnologia que cuida</p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
+                    Mais saúde,<br>
+                    mais conforto,<br>
+                    mais vida.
+                </h1>
+                <p class="text-lg md:text-xl font-light text-gray-300 max-w-lg">
+                    O cone com inalador PetNex foi desenvolvido para oferecer alívio respiratório e bem-estar para o seu pet, unindo tecnologia, conforto e cuidado.
+                </p>
+                <div class="pt-4">
+                    <button class="bg-gold text-darkText font-semibold py-3 px-8 rounded-full hover:bg-yellow-500 transition-all duration-300 shadow-lg shadow-gold/20 flex items-center gap-2">
+                        Conheça o produto <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Image Content -->
+            <div class="relative z-10">
+                <div class="relative rounded-[2rem] overflow-hidden border-4 border-medGreen/30 shadow-2xl">
+                    <img src="img/cachorrinho.jpeg" alt="Cachorro usando o cone inalador PetNex" class="w-full h-auto object-cover">
+                </div>
+                <!-- Small floating badge -->
+                <div class="absolute -bottom-6 -right-6 md:bottom-10 md:-right-10 bg-cream text-darkGreen p-5 rounded-2xl shadow-xl max-w-[200px] border border-gray-200">
+                    <i class="fa-solid fa-shield-cat text-gold text-2xl mb-2"></i>
+                    <p class="text-sm font-semibold">Conforto para respirar. Mais vida para eles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Icon Row Section -->
+    <section class="bg-cream border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 text-center">
+                <div class="flex flex-col items-center gap-3 w-32">
+                    <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <span class="text-sm font-medium">Pets Reais</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-32">
+                    <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <span class="text-sm font-medium">Tecnologia</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-32">
+                    <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-pump-medical"></i>
+                    </div>
+                    <span class="text-sm font-medium">Cone + Inalador</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-32">
+                    <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <span class="text-sm font-medium">Mais Conforto</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-32">
+                    <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <span class="text-sm font-medium">Nosso Impacto</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Product Highlight Section -->
+    <section class="bg-cream py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            
+            <!-- Left: Text Info -->
+            <div class="space-y-6">
+                <p class="text-sm font-bold text-medGreen tracking-widest uppercase">Nosso Produto</p>
+                <h2 class="text-4xl font-bold text-darkGreen leading-tight">Cone com Inalador PetNex</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    O cone com inalador PetNex é a solução ideal para o tratamento respiratório do seu pet, combinando tecnologia segura, prática e altamente eficiente para o uso doméstico ou veterinário.
+                </p>
+                <div class="pt-2">
+                    <button class="bg-darkGreen text-lightText font-medium py-3 px-6 rounded-full hover:bg-medGreen transition-colors flex items-center gap-2">
+                        Ver detalhes <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Center: Product Image -->
+            <div class="flex justify-center">
+                <img src="img/gatoSafado.jpeg" alt="Detalhe do Cone PetNex" class="w-full max-w-md h-auto rounded-full shadow-2xl border-8 border-white object-cover">
+            </div>
+
+            <!-- Right: Features List -->
+            <div class="space-y-8">
+                <!-- Feature 1 -->
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 shrink-0 rounded-2xl bg-white shadow flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-lungs"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-darkGreen">Inalação eficiente</h3>
+                        <p class="text-sm text-gray-600 mt-1">Ajuda na respiração e alivia os sintomas respiratórios rapidamente.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 shrink-0 rounded-2xl bg-white shadow flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-darkGreen">Design confortável</h3>
+                        <p class="text-sm text-gray-600 mt-1">Leve, ajustável e seguro, minimizando o estresse do animal durante o uso.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 shrink-0 rounded-2xl bg-white shadow flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-regular fa-gem"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-darkGreen">Material resistente</h3>
+                        <p class="text-sm text-gray-600 mt-1">Durável, ecológico e muito fácil de desmontar para limpar.</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 shrink-0 rounded-2xl bg-white shadow flex items-center justify-center text-darkGreen text-xl">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-darkGreen">Tecnologia segura</h3>
+                        <p class="text-sm text-gray-600 mt-1">Desenvolvido com materiais de alta qualidade e validação veterinária.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 5. Audience Section -->
+    <section class="bg-darkGreen text-lightText py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left Content -->
+            <div class="space-y-6">
+                <p class="text-gold font-medium uppercase tracking-widest text-sm">Para todos os pets</p>
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight">Cuidado inteligente em todas as fases.</h2>
+                <p class="text-gray-300 text-lg max-w-md">
+                    Do filhote ao idoso, o PetNex oferece mais conforto e qualidade de vida para o seu melhor amigo, independentemente da raça ou tamanho.
+                </p>
+                <div class="pt-4">
+                    <button class="border-2 border-white text-white font-medium py-3 px-8 rounded-full hover:bg-white hover:text-darkGreen transition-all flex items-center gap-2">
+                        Saiba mais <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Content: Imagem do Cachorro -->
+            <div class="flex justify-center lg:justify-end">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gold blur-xl opacity-20 rounded-[2rem]"></div>
+                    <img src="img/CachorroDePerfil.jpeg" alt="Cachorro usando Cone PetNex de perfil" class="relative w-full max-w-md h-auto object-cover rounded-[2rem] shadow-2xl border-4 border-medGreen">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section -->
+    <section class="bg-cream py-24 px-6 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto flex flex-col xl:flex-row gap-12">
+            
+            <!-- Title Area -->
+            <div class="xl:w-1/3 space-y-4">
+                <p class="text-sm font-bold text-medGreen tracking-widest uppercase">Depoimentos</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-darkGreen">O que nossos clientes dizem</h2>
+                <p class="text-gray-600">Histórias reais de quem já vive a diferença que o PetNex faz no dia a dia.</p>
+                <div class="pt-4">
+                    <button class="border border-darkGreen text-darkGreen font-medium py-2 px-6 rounded-full hover:bg-darkGreen hover:text-white transition-colors flex items-center gap-2 text-sm">
+                        Ver mais depoimentos <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cards Area -->
+            <div class="xl:w-2/3 flex flex-col md:flex-row gap-6 overflow-x-auto pb-4 snap-x">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 min-w-[300px] flex-1 snap-start">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://placehold.co/100x100/DEB08B/FFFFFF?text=Foto" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                        <div class="text-gold text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"Meu cachorro tinha crises respiratórias constantes. Com o PetNex, ele respira muito melhor e fica super tranquilo durante a inalação."</p>
+                    <p class="font-bold text-darkGreen text-sm">- Mariana S.<br><span class="text-xs font-normal text-gray-400">Tutora do Thor</span></p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 min-w-[300px] flex-1 snap-start">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://placehold.co/100x100/1A4331/FFFFFF?text=Foto" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                        <div class="text-gold text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"O produto é incrível! Meu gato sempre brigou com a máscara antiga, mas se adaptou super bem ao cone. Já percebo a diferença na respiração."</p>
+                    <p class="font-bold text-darkGreen text-sm">- Lucas T.<br><span class="text-xs font-normal text-gray-400">Tutor da Luna</span></p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 min-w-[300px] flex-1 snap-start">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://placehold.co/100x100/EAD09E/333333?text=Foto" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                        <div class="text-gold text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"Tecnologia, conforto e cuidado em um só produto. A montagem é fácil e a higienização também. Recomendo de olhos fechados!"</p>
+                    <p class="font-bold text-darkGreen text-sm">- Fernanda M.<br><span class="text-xs font-normal text-gray-400">Tutora do Bob</span></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="bg-darkGreen text-white py-12 text-center">
+        <div class="flex items-center justify-center mb-6">
+            <img src="img/logo3.png" alt="PetNex Logo" class="h-20 w-auto object-cover rounded-xl onerror="this.src='https://placehold.co/150x80/1A4331/FFFFFF?text=PetNex'">
+        </div>
+        <p class="text-sm text-gray-400 mb-6">Conexão entre Pets e Tecnologia.</p>
+        <p class="text-xs text-gray-500">&copy; 2026 PetNex. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+
+</body>
+</html>
